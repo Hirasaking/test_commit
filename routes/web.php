@@ -34,7 +34,7 @@ Route::prefix('develop')->group(function () {
 Route::prefix('puchase')->group(function () {
     Route::get('/', 'PurchaseController@index')->name('purchase');
 });
-
+// エディタから編集
 
 
 Route::prefix('menu')->group(function () {
