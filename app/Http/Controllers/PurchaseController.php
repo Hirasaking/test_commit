@@ -18,7 +18,8 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        dd($this->purchase->GetShowPurcahse());
+        $purchases = $this->purchase->getPurcahse();
+        return view('purchase.index',compact('purchases', $purchases));
     }
 
     /**
