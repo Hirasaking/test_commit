@@ -12,9 +12,10 @@ class SaleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $sale = $this->purchase->getPurcahse();
+        return view('sale.index',compact('sale', $sale));
     }
 
     /**

@@ -20,8 +20,8 @@ class CreatePurchasesTable extends Migration
             $table->string('product_name', 128)->comment('商品名');
             $table->unsignedSmallInteger('quantity')->comment('数量');
             $table->unsignedSmallInteger('stock')->comment('在庫');
-            $table->unsignedInteger('price')->comment('金額');
-            $table->unsignedInteger('total_price')->comment('金額');
+            $table->unsignedInteger('unit_price')->comment('単価');
+            $table->unsignedInteger('purchase_amount')->comment('仕入額');
             $table->unsignedTinyInteger('status')->comment('ステータス'); //予約注文返品てーぶるは別に準備
             $table->string('memo', 256)->comment('メモ')->nullable();
             $table->timestamps();

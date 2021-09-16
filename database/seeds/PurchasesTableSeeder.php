@@ -21,10 +21,10 @@ class PurchasesTableSeeder extends Seeder
                 'product_name'  => '商品:No' . $i,
                 'quantity'  => $qty,
                 'stock'  => $qty - random_int(0,1),
-                'price'  => $price,
-                'total_price'  => $total_price,
+                'unit_price'  => $price,
+                'purchase_amount'  => $total_price,
                 'status'    => random_int(0,5),
-                'memo'  => '@@@@@@@@@@@@@@',
+                'memo'  => '仕入メモ' . $i,
                 'created_at' => '2020-02-20 00:00:00',
                 'updated_at' => '2020-02-20 00:00:00',
 

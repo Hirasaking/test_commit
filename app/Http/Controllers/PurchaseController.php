@@ -19,7 +19,7 @@ class PurchaseController extends Controller
     public function index()
     {
         $purchases = $this->purchase->getPurcahse();
-        return view('purchase.index',compact('purchases', $purchases));
+        return view('purchases.index',compact('purchases', $purchases));
     }
 
     /**

@@ -9,8 +9,8 @@
     {{$purchase->product_name}}
     {{$purchase->quantity}}
     {{$purchase->stock}}
-    {{$purchase->price}}
-    {{$purchase->total_price}}
+    {{$purchase->unit_price}}
+    {{$purchase->purchase_amount}}
     {{$purchase->status}}
     {{$purchase->memo}}
   </div>
