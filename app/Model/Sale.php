@@ -10,14 +10,14 @@ class Sale extends Model
 
     public function getSale(){
 
-        $query = self::ShowSale()
+        $query = $this->ShowSale()->IsDelete()
         ->limit(5)
         ->get();
 
         return $query;
     }
 
-    // 有効な販売データを取得
+    // 有効な販売データを取得 scopeの１つ目
     public function scopeShowSale($query){
         return $query->addselect(
             [
@@ -37,4 +37,12 @@ class Sale extends Model
             ]
             )->whereNotIn('status', [config('const.STATUS.HIDE')]);
     }
+
+    // 有効な販売データを取得 複数のscopr組み合わせ
+    // is_deleteがOFFのデータのみ取得
+    public function scopeIsDelete($query){
+        return $query->where('is_delete', '<>', 1);
+    }
+
+
 }
