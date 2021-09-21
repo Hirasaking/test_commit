@@ -8,7 +8,7 @@ class Sale extends Model
 {
     protected $table = 'sales';
 
-    public function getPurcahse(){
+    public function getSale(){
 
         $query = self::ShowSale()
         ->limit(5)
@@ -21,13 +21,18 @@ class Sale extends Model
     public function scopeShowSale($query){
         return $query->addselect(
             [
-                $this->getTable() . '.purchase_id',
-                $this->getTable() . '.purchase_date',
+                $this->getTable() . '.sale_id',
+                $this->getTable() . '.sale_date',
+                $this->getTable() . '.market',
                 $this->getTable() . '.product_name',
-                $this->getTable() . '.quantity',
-                $this->getTable() . '.stock',
-                $this->getTable() . '.price',
-                $this->getTable() . '.total_price',
+                $this->getTable() . '.sale_volume',
+                $this->getTable() . '.unit_price',
+                $this->getTable() . '.market_fee',
+                $this->getTable() . '.shipping_fee',
+                $this->getTable() . '.sale_amount',
+                $this->getTable() . '.purchase_amount',
+                $this->getTable() . '.profit_amount',
+                $this->getTable() . '.status',
                 $this->getTable() . '.memo',
             ]
             )->whereNotIn('status', [config('const.STATUS.HIDE')]);

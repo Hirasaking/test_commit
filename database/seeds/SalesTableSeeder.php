@@ -25,8 +25,7 @@ class SalesTableSeeder extends Seeder
                 'status'    => random_int(0,2),
                 'created_at' => '2020-02-20 00:00:00',
                 'updated_at' => '2020-02-20 00:00:00',
-
-            ]; 
+            ];
         }
         DB::table('sales')->delete(); //最初にdrop Table
         

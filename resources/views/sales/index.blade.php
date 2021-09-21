@@ -1,18 +1,44 @@
 @extends('base')
 @section('content')
-
+<table>
+  <tr>
+    <th>販売番号</th>
+    <th>販売日</th>
+    <th>販売先</th>
+    <th>商品名</th>
+    <th>個数</th>
+    <th>単価</th>
+    <th>手数料</th>
+    <th>送料</th>
+    <th>合計</th>
+    <th>仕入額</th>
+    <th>利益額</th>
+    <th>ステータス</th>
+    <th>メモ</th>
+  </tr>
   @foreach($sales as $sale)
-  <div>
-    {{$sale->sale_id}}
-    {{$sale->sale_date}}
-    {{$sale->supplier_name}}
-    {{$sale->product_name}}
-    {{$sale->quantity}}
-    {{$sale->stock}}
-    {{$sale->price}}
-    {{$sale->total_price}}
-    {{$sale->status}}
-    {{$sale->memo}}
-  </div>
+    <tr>
+      <td>{{$sale->sale_id}}</td>
+      <td>{{$sale->sale_date}}</td>
+      <td>{{$sale->market}}</td>
+      <td>{{$sale->product_name}}</td>
+      <td>{{$sale->sale_volume}}</td>
+      <td>{{$sale->unit_price}}</td>
+      <td>{{$sale->market_fee}}</td>
+      <td>{{$sale->shipping_fee}}</td>
+      <td>{{$sale->sale_amount}}</td>
+      <td>{{$sale->purchase_amount}}</td>
+      <td>{{$sale->profit_amount}}</td>
+      <td>{{$sale->status}}</td>
+      <td>
+        @empty($sale->memo)
+          -
+        @else
+          {{$sale->memo}}
+        @endempty
+      </td>
+    </tr>
   @endforeach
+</table>
+
 @endsection

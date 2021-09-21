@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
+    public function __construct(){
+        $this->sale = new Sale();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +18,8 @@ class SaleController extends Controller
      */
     public function index(Request $request)
     {
-        $sale = $this->purchase->getPurcahse();
-        return view('sale.index',compact('sale', $sale));
+        $sales = $this->sale->getSale();
+        return view('sales.index',compact('sales', $sales));
     }
 
     /**
