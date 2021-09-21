@@ -14,7 +14,7 @@ class CreatePurchasesTable extends Migration
     public function up()
     {
         Schema::create('purchases', function (Blueprint $table) {
-            $table->unsignedBigInteger('purchase_id')->comment('仕入番号')->autoIncrement();
+            $table->unsignedBigInteger('purchase_id')->autoIncrement()->comment('仕入番号')->autoIncrement();
             $table->date('purchase_date')->comment('仕入日');
             $table->string('supplier_name', 128)->comment('仕入先')->nullable();
             $table->string('product_name', 128)->comment('商品名');
@@ -24,6 +24,7 @@ class CreatePurchasesTable extends Migration
             $table->unsignedInteger('purchase_amount')->comment('仕入額');
             $table->unsignedTinyInteger('status')->comment('ステータス'); //予約注文返品てーぶるは別に準備
             $table->string('memo', 256)->comment('メモ')->nullable();
+            $table->boolean('is_delete')->default(0)->comment('削除対象');
             $table->timestamps();
         });
     }

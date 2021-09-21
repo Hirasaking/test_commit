@@ -10,23 +10,19 @@ class SalesTableSeeder extends Seeder
         $data = [];
         // 適当な１０の販売データ
         for($i=1;$i<=30;$i++){
+            $sale_volume = random_int(1,3);
             $data[] = [
-                'order_date'   => '2020-02-20 00:00:00',
-                'order_id'     => $i,
-                'platform'  => random_int(1,5),
-                'product_name'  => '商品:No' . $i,
-                'quantity'  => random_int(1,3),
-                'sales_price'  => 10000,
-                'fee_rate'    => 10,
-                'fee'    => 1000,
-                'delivery_cost'    => 1000,
-                'sales_income'    => 8000,
-                'purchase_cost'    => 6000,
-                'net_income'    => 2000,
-                'collect_point'    => random_int(0,100),
-                'collect_point_kind'    => random_int(1,5),
+                'sale_date' => '2020-02-20 00:00:00',
+                'market' => $i,
+                'product_name' => '商品:No' . $i,
+                'sale_volume' => $sale_volume,
+                'unit_price' => 10000,
+                'market_fee' => 1000,
+                'shipping_fee' => 485,
+                'sale_amount' => $sale_volume * 10000,
+                'purchase_amount' => $sale_volume * 100,
+                'profit_amount' => $sale_volume * 100,
                 'status'    => random_int(0,2),
-                'delete_flg'    => 0,
                 'created_at' => '2020-02-20 00:00:00',
                 'updated_at' => '2020-02-20 00:00:00',
 

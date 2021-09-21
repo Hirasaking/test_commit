@@ -15,7 +15,6 @@ class PurchasesTableSeeder extends Seeder
             $total_price = $qty * $price;
 
             $data[] = [
-                'purchase_id'     => $i,
                 'purchase_date' => '2020-02-20 00:00:00',
                 'supplier_name' => '店舗番号:No' . $i,
                 'product_name'  => '商品:No' . $i,
@@ -27,7 +26,6 @@ class PurchasesTableSeeder extends Seeder
                 'memo'  => '仕入メモ' . $i,
                 'created_at' => '2020-02-20 00:00:00',
                 'updated_at' => '2020-02-20 00:00:00',
-
             ];
         }
         DB::table('purchases')->delete(); //最初にdrop Table
